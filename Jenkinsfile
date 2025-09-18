@@ -2,6 +2,8 @@ pipeline {
     agent any
     environment {
         ENV_URL = 'pipeline.google.com'
+        SSH_CRED = credentials('SSH_CRED') 
+}
     }
 
     stages {
@@ -10,6 +12,7 @@ pipeline {
                 sh '''
                     echo Hello World
                     echo URL is $ENV_URL
+                    env | grep SSH_CRED
                 '''
             }
         }
