@@ -35,7 +35,7 @@ pipeline {
         stage('Thrid stage') {
             steps {
                 echo "Hello Third stage"
-                echo "Application Name: ${params.DEPLOY_ENV}"
+                echo "Application Name: ${params.APP_NAME}"
             }
         }
     }
