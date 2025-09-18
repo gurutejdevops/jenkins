@@ -7,6 +7,7 @@ pipeline {
 
     parameters {
         string defaultValue: 'myapp', description: 'Application Name', name: 'APP_NAME'
+        choice(name: 'DEPLOY_ENV', choices: ['dev', 'stage', 'prod'], description: 'Select deployment environment')
   
 }
 
@@ -36,6 +37,7 @@ pipeline {
             steps {
                 echo "Hello Third stage"
                 echo "Application Name: ${params.APP_NAME}"
+                echo "Deployment Environment: ${params.DEPLOY_ENV}"
             }
         }
     }
