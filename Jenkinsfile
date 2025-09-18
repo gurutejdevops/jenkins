@@ -6,7 +6,7 @@ pipeline {
 }
 
     parameters {
-        string defaultValue: 'Guru', name: 'Enter Name'
+        string defaultValue: 'myapp', description: 'Application Name', name: 'APP_NAME'
   
 }
 
@@ -17,6 +17,7 @@ pipeline {
                     echo Hello World
                     echo URL is $ENV_URL
                     env | grep SSH_CRED
+                    echo APP Name: ${params.APP_NAME}
                 '''
             }
         }
