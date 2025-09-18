@@ -4,7 +4,6 @@ pipeline {
         ENV_URL = 'pipeline.google.com'
         SSH_CRED = credentials('SSH_CRED') 
 }
-    }
 
     stages {
         stage('Hello') {
