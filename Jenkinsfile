@@ -40,7 +40,7 @@ pipeline {
                 echo "Deployment Environment: ${params.DEPLOY_ENV}"
             }
         }
-        stage() {
+        stage('Password') {
             
             steps {
                 withCredentials([usernameColonPassword(credentialsId: 'SSH_CRED', variable: 'Username')]) {
