@@ -17,7 +17,6 @@ pipeline {
                     echo Hello World
                     echo URL is $ENV_URL
                     env | grep SSH_CRED
-                    echo APP Name: ${params.APP_NAME}
                 '''
             }
         }
@@ -35,7 +34,8 @@ pipeline {
         }
         stage('Thrid stage') {
             steps {
-                echo 'Hello Third stage'
+                echo "Hello Third stage"
+                echo "Application Name: ${params.DEPLOY_ENV}"
             }
         }
     }
