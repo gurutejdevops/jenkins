@@ -5,6 +5,11 @@ pipeline {
         SSH_CRED = credentials('SSH_CRED') 
 }
 
+    parameters {
+        string defaultValue: 'Guru', name: 'Enter Name'
+  
+}
+
     stages {
         stage('Hello') {
             steps {
