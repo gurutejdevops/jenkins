@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'Jenkins_Node1'
+    }
     environment {
         ENV_URL = 'pipeline.google.com'
         SSH_CRED = credentials('SSH_CRED') 
@@ -28,6 +30,7 @@ pipeline {
                             echo Hello World
                             echo URL is $ENV_URL
                             env | grep SSH_CRED
+                            hostname
                             mvn -v
                         '''
                     }
