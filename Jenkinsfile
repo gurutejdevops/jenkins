@@ -11,6 +11,10 @@ pipeline {
   
 }
 
+    tools {
+        maven 'maven-3.8.6'
+        }
+        
     // triggers {
     //     cron '*/2 * * * *'
     // }
