@@ -14,7 +14,7 @@ pipeline {
     tools {
         maven 'maven-3.8.6'
         }
-        
+
     // triggers {
     //     cron '*/2 * * * *'
     // }
@@ -26,6 +26,7 @@ pipeline {
                     echo Hello World
                     echo URL is $ENV_URL
                     env | grep SSH_CRED
+                    mvn --version
                 '''
             }
         }
