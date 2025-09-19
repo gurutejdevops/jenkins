@@ -69,7 +69,7 @@ pipeline {
 
     post {
         always {
-            clearWS()  //Clear workspace
+            clearWs()  //Clear workspace
         }
     }
 }
