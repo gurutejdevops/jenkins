@@ -26,7 +26,7 @@ pipeline {
                     echo Hello World
                     echo URL is $ENV_URL
                     env | grep SSH_CRED
-                    mvn --version
+                    mvn -v
                 '''
             }
         }
