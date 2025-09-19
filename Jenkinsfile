@@ -66,10 +66,10 @@ pipeline {
 
         }
     }
-
     post {
         always {
-            clearWs()  //Clear workspace
+            clearWs()
         }
     }
+
 }
