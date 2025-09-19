@@ -20,7 +20,7 @@ pipeline {
     // }
 
     stages {
-        stage(Parallel execution of stages - Hello Bye and Third stage) {
+        stage('Parallel execution of stages - Hello Bye and Third stage') {
             paralle {
                 stage('Hello') {
                     steps {
