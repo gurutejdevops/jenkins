@@ -3,17 +3,17 @@ pipeline {
         label 'Jenkins_Node1'
     }
 
-    parameters {
-        booleanParam(defaultValue: true, description: 'Run Tests?', name: 'RUN_TESTS')
+    environment {
+        DEPLOY_ENV = 'dev'
     }
     
     stages {
         stage('Build') {
             when {
-                expression { params.RUN_TESTS == false }
+                environment name: 'DEPLOY_ENV', value='prod'
             }
             steps {
-                echo "Tests are running because RUN_TESTS = false"
+                echo "Deploying to Production"
             }
 
         }
