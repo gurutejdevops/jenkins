@@ -5,9 +5,6 @@ pipeline {
 
     stages {
         stage('Build') {
-            when {
-                branch 'feature1'
-            }
             steps {
                 sh '''
                 echo "This runs only on the feature1 branch"
