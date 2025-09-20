@@ -3,14 +3,19 @@ pipeline {
         label 'Jenkins_Node1'
     }
 
+    parameters {
+        booleanParam defaultValue: true, description: 'Run Tests?', name: 'RUN_TESTS'
+    }
+    
     stages {
         stage('Build') {
-            steps {
-                sh '''
-                echo "This runs only on the feature1 branch"
-                git branch
-                '''
+            when {
+                expression {param.RUN_TESTS == false}
             }
+            steps {
+                echo "Tests are running because RUN_TESTS = false"
+            }
+
         }
     }
 }
